@@ -5,6 +5,7 @@ import { VersionSwitcher } from "@/components/version-switcher";
 import type { LinkItemType } from "fumadocs-ui/layouts/shared";
 import { DocsLayout } from "@/components/layout/notebook";
 import { LATEST_VERSION } from "@/lib/version";
+import { StatusIndicator } from "@/components/status-indicator";
 import { SidebarBannerCarousel } from "@/components/sidebar-banner";
 import { fetchOgImage } from "@/lib/og-image";
 import { cn } from "@prisma-docs/ui/lib/cn";
@@ -52,6 +53,7 @@ export default async function Layout({ children }: { children: React.ReactNode }
         footer: ({ className, ...props }: ComponentProps<"div">) => (
           <div className={cn("flex flex-col p-4 pt-2 gap-3", className)} {...props}>
             <SidebarBannerCarousel slides={slides} />
+            <StatusIndicator />
             {props.children}
           </div>
         ),

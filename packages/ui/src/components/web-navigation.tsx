@@ -49,8 +49,11 @@ export function WebNavigation({ links }: WebNavigationProps) {
       <NavigationMenu mobileOpen={mobileView}>
         <NavigationWrapper mobileOpen={mobileView}>
           <NavigationMenuList>
-            <NavigationMenuItem>
-              <NavigationMenuLink className="shrink-0 w-full p-0 hover:bg-transparent! focus:bg-transparent! data-active:bg-transparent! data-active:hover:bg-transparent! data-active:focus:bg-transparent! hover:cursor-pointer" href="https://www.prisma.io/">
+            <NavigationMenuItem className="outline-none!">
+              <NavigationMenuLink
+                className="shrink-0 w-full p-0 hover:bg-transparent focus:bg-transparent focus-visible:outline-none focus-visible:ring-0"
+                href="/"
+              >
                 {Logo}
               </NavigationMenuLink>
             </NavigationMenuItem>

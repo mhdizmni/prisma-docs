@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { cn } from "../lib/cn";
 
 const logoParade = [
   {
@@ -47,6 +48,7 @@ const logoParade = [
   {
     label: "Invisible",
     imageUrl: `/icons/companies/invisible.svg`,
+    imageUrlLight: `/icons/companies/invisible-light.svg`,
     url: "https://inv.tech/",
     width: 182,
     height: 36,
@@ -145,8 +147,20 @@ export default function LogoParade() {
                 width={item.width}
                 height={item.height}
                 alt={item.label}
-                className="w-full h-full object-contain object-center"
+                className={cn(
+                  "w-full h-full object-contain object-center",
+                  item.imageUrlLight && "hidden dark:block",
+                )}
               />
+              {item.imageUrlLight && (
+                <img
+                  src={item.imageUrlLight}
+                  width={item.width}
+                  height={item.height}
+                  alt={item.label}
+                  className="w-full h-full object-contain object-center block dark:hidden"
+                />
+              )}
             </a>
           ))}
         </div>

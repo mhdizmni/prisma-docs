@@ -37,15 +37,12 @@ const orm = [
   "/client",
   "/orm",
   "/showcase",
+  "/ecosystem",
 ];
 type ColorType = "orm" | "ppg" | undefined;
 
 function getUtmMedium(pathname: string) {
-  const slug = pathname
-    .split("?")[0]
-    .split("/")
-    .filter(Boolean)
-    .join("-");
+  const slug = pathname.split("?")[0].split("/").filter(Boolean).join("-");
 
   return slug || "index";
 }
